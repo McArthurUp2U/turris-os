@@ -18,6 +18,19 @@ CONFIG_TARGET_EXT4_MAXINODE=12000
 CONFIG_PACKAGE_qt5-concurrent=m
 CONFIG_PACKAGE_qt5-core=m
 CONFIG_PACKAGE_qt5-network=m
+CONFIG_PACKAGE_cups=m
+CONFIG_PACKAGE_cups-bjnp=m
+# CONFIG_PACKAGE_cups-bsd is not set
+CONFIG_PACKAGE_cups-client=m
+CONFIG_PACKAGE_cups-ppdc=m
+CONFIG_PACKAGE_ghostscript=m
+CONFIG_PACKAGE_ghostscript-fonts-std=m
+CONFIG_PACKAGE_ghostscript-gnu-gs-fonts-other=m
+CONFIG_PACKAGE_gutenprint-cups=m
+CONFIG_PACKAGE_liberation-fonts=m
+CONFIG_PACKAGE_openprinting-cups-filters=m
+# CONFIG_PACKAGE_p910nd is not set
+CONFIG_PACKAGE_ubuntu-fonts=m
 
 
 # Use musl for Omnia
