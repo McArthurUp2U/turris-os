@@ -49,10 +49,10 @@ popd
 # Bump release numbers when asked for
 while read pkg orig_release release; do
 	if [ $orig_release = X ]; then
-		sed -i 's|^PKG_RELEASE\(:\?\)=\$(PKG_SOURCE_VERSION)$|PKG_RELEASE\1=\$(PKG_SOURCE_VERSION)-'"$release"'|' "$pkg"/Makefile
+		sed -i 's|^PKG_RELEASE\(:\?\)=\$(PKG_SOURCE_VERSION)$|PKG_RELEASE\1=\$(PKG_SOURCE_VERSION)-'"$release"'|' "$pkg"/Makefile || true
 	else
-		sed -i 's|^PKG_RELEASE\(:\?\)='"$orig_release"'\+$|PKG_RELEASE\1='"$release"'|' "$pkg"/Makefile
-		sed -i 's|^PKG_RELEASE\(:\?\)=\$(PKG_SOURCE_VERSION)-'"$orig_release"'\+$|PKG_RELEASE\1=\$(PKG_SOURCE_VERSION)-'"$release"'|' "$pkg"/Makefile
+		sed -i 's|^PKG_RELEASE\(:\?\)='"$orig_release"'\+$|PKG_RELEASE\1='"$release"'|' "$pkg"/Makefile || true
+		sed -i 's|^PKG_RELEASE\(:\?\)=\$(PKG_SOURCE_VERSION)-'"$orig_release"'\+$|PKG_RELEASE\1=\$(PKG_SOURCE_VERSION)-'"$release"'|' "$pkg"/Makefile || true
 	fi
 done < release-override
 
@@ -76,7 +76,8 @@ cat >> base.lua << EOF
 -- The fallback repository
 Repository 'turris-fallback' 'https://api.turris.cz/openwrt-repo/${TARGET_BOARD}-nightly/packages' {
 	subdirs = {'base', $(echo $(sed -n 's|^src-git[[:blank:]]\+\([^[:blank:]]*\)[[:blank:]]\+http.*|\1|p' ./feeds.conf.default) | sed -e 's|\([^[:blank:]]\+\)|'"'\\1'|g" -e 's|\ |,\ |g')},
-	priority = 40
+	priority = 40,
+	ignore = {'missing'}
 }
 EOF
 fi
