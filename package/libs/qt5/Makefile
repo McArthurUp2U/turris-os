@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=qt5
-PKG_VERSION:=5.0.2
+PKG_VERSION:=5.7.0
 PKG_RELEASE:=1
-PKG_MD5SUM:=87cae8ae2f82f41ba027c2db0ab639b7
+PKG_MD5SUM:=9a46cce61fc64c20c3ac0a0e0fa41b42
 
 PKG_SOURCE:=qt-everywhere-opensource-src-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=http://download.qt-project.org/official_releases/qt/5.0/$(PKG_VERSION)/single
+PKG_SOURCE_URL:=http://download.qt-project.org/official_releases/qt/5.7/$(PKG_VERSION)/single
 PKG_BUILD_DIR=$(BUILD_DIR)/qt-everywhere-opensource-src-$(PKG_VERSION)
 PKG_BUILD_PARALLEL:=1
 PKG_BUILD_DEPENDS:=+libstdcpp
