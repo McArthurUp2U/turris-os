@@ -85,6 +85,7 @@ define Build/Configure
 			-plugindir $(CONFIGURE_PREFIX)/lib/Qt/plugins \
 			-xplatform linux-openwrt-g++ \
 			-opensource \
+			-release \
 			-confirm-license \
 			-no-sql-db2 \
 			-no-sql-ibase \
@@ -100,33 +101,47 @@ define Build/Configure
 			-no-libpng \
 			-no-libjpeg \
 			-no-xcb \
+			-no-xcb-xlib \
 			-no-strip \
+			-no-libinput \
 			-openssl \
 			-no-gui \
 			-no-widgets \
 			-no-nis \
+			-no-journald \
 			-no-cups \
 			-no-dbus \
+			-no-harfbuzz \
+			-no-libproxy \
 			-no-eglfs \
 			-no-directfb \
 			-no-linuxfb \
 			-no-kms \
 			-no-opengl \
-			-no-javascript-jit \
+			-no-widgets \
+			-no-eglfs \
+			-no-kms \
+			-no-directfb \
+			-no-linuxfb \
+			-no-opengl \
 			-make libs \
-			-nomake webkit \
-			-nomake docs \
 			-nomake examples \
-			-nomake demos \
 			-nomake tests \
+			-skip qtcanvas3d \
 			-skip qtdeclarative \
-			-skip qtjsbackend \
 			-skip qtmultimedia \
-			-skip activeqt \
-			-skip qtwebkit \
-			-skip qtwebkit-examples-and-demos \
-			-skip qtimageformats \
+			-skip qtactiveqt \
 			-skip qtgraphicaleffects \
+			-skip qtlocation \
+			-skip qtpurchasing \
+			-skip qtquickcontrols \
+			-skip qtquickcontrols2 \
+			-skip qttranslations \
+			-skip qtvirtualkeyboard \
+			-skip qtwayland \
+			-skip qtwebengine \
+			-skip qt3d \
+			-skip qtwebview \
 			-skip qtdoc \
 			-v \
 	)
